@@ -1,0 +1,238 @@
+/* Color Theme Variables */
+:root {
+  --background-light: #f9f9f9;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --primary-light: #ecf0f1;
+  --primary-medium: #3498db;
+  --accent-green: #2ecc71;
+  --accent-green-light: #58d68d;
+  --accent-yellow: #f1c40f;
+  --accent-silver: #bdc3c7;
+}
+
+/* Body Styling */
+body {
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  border-bottom: 2px solid var(--accent-green);
+  padding: 1.5rem;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: var(--primary-medium);
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: var(--accent-silver);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent-green);
+  background-color: rgba(46, 204, 113, 0.2);
+  text-decoration: underline;
+}
+
+/* Content Sections */
+.content {
+  background-color: #ffffff;
+  border: 1px solid var(--primary-medium);
+  padding: 2.5rem 1.5rem;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  max-width: 1200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+  color: var(--primary-medium);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p,
+.content li {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.content ul {
+  padding-left: 1.5rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--accent-green);
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background: linear-gradient(to right, #3498db, #3e5490);
+  color: var(--accent-yellow);
+  font-weight: 600;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+td {
+  color: var(--text-primary);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+tr:hover {
+  background-color: rgba(46, 204, 113, 0.2);
+}
+
+table td:last-child,
+table th:last-child {
+  background-color: var(--accent-green);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Image Zoom Effect */
+.image-zoom {
+  overflow: hidden;
+  margin: 1rem 0;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-zoom img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: var(--primary-medium);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));
+  border-top: 2px solid var(--accent-green);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav h1 {
+    font-size: 1.5rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .content p,
+  .content li {
+    font-size: 0.9rem;
+  }
+}
